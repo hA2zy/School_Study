@@ -252,10 +252,27 @@
 #     else:
 #         print("올바른 선택이 아닙니다.")
 
-a = [1,2,3,4,5]
+# a = [1,2,3,4,5]
 
-a = [1,2,3,[90,80],4,5]
+# a = [1,2,3,[90,80],4,5]
 
-print(a)
+# print(a)
 
-print(a[3])
+# print(a[3])
+
+import math as mt
+MAXSu = 10000
+
+dat = [a for a in range(2, MAXSu)]
+sosu = []
+
+while dat[0] <= mt.isqrt(10000):
+  sosu.append(dat[0])
+  dat = [a for a in dat if a % dat[0]]
+sosu.extend(dat)
+
+print(sosu,len(sosu))
+
+fd = open("sosu", "wt")
+fd.write(str(sosu))
+fd.close()
