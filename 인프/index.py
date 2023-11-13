@@ -260,16 +260,17 @@
 
 # print(a[3])
 
-import math as mt
+import math
 
 MAXSu = 10000
 
 dat = [a for a in range(2, MAXSu)]
 sosu = []
 
-while dat[0] <= mt.isqrt(10000):
+while dat[0] <= int(math.isqrt(10000)):
     sosu.append(dat[0])
     dat = [a for a in dat if a % dat[0]]
+
 sosu.extend(dat)
 
 print(sosu, len(sosu))
@@ -280,6 +281,15 @@ print(sosu, len(sosu))
 
 fd = open("sosu", "rt")
 strline = fd.readline()
-fd.close
+fd.close()
 
-print(strline)
+sosu = [int(a) for a in strline.split()]
+
+while True:
+    su = int(input("1000 이하의 자연수 입력 (0 to end): "))
+    if su == 0:
+        break
+    if su in sosu:
+        print("\t\t\t\t소수")
+    else:
+        print("\t\t\t 합성수")
