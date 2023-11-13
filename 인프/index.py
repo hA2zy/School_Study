@@ -273,6 +273,12 @@ sosu.extend(dat)
 
 print(sosu,len(sosu))
 
-fd = open("sosu", "wt")
-fd.write(str(sosu))
-fd.close()
+# fd = open("sosu", "wt")
+# fd.write(str(sosu))
+# fd.close()
+
+fd = open("sosu", "rt")
+strline = fd.readline()
+fd.close
+
+print(strline)
