@@ -169,7 +169,7 @@
 #     print("4. 나눗셈")
 #     print("5. 나머지")
 #     print("6. 종료")
-    
+
 #     choice = input("선택 (1/2/3/4/5): ")
 
 #     # 종료
@@ -223,7 +223,7 @@
 #     print("4. 나눗셈")
 #     print("5. 나머지 연산")
 #     print("6. 종료")
-    
+
 #     choice = input("선택 (1/2/3/4/5/6): ")
 
 #     if choice == '6':
@@ -261,17 +261,18 @@
 # print(a[3])
 
 import math as mt
+
 MAXSu = 10000
 
 dat = [a for a in range(2, MAXSu)]
 sosu = []
 
 while dat[0] <= mt.isqrt(10000):
-  sosu.append(dat[0])
-  dat = [a for a in dat if a % dat[0]]
+    sosu.append(dat[0])
+    dat = [a for a in dat if a % dat[0]]
 sosu.extend(dat)
 
-print(sosu,len(sosu))
+print(sosu, len(sosu))
 
 # fd = open("sosu", "wt")
 # fd.write(str(sosu))
