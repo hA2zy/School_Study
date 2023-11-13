@@ -262,31 +262,29 @@
 
 import math
 
-MAXSu = 10000
+MAXSu = 100
 
-dat = [a for a in range(2, MAXSu)]
+dat = [a for a in range(2, MAXSu + 1)] 
 sosu = []
 
-while dat[0] <= int(math.isqrt(10000)):
+while dat and dat[0] <= int(math.sqrt(MAXSu)):
     sosu.append(dat[0])
-    dat = [a for a in dat if a % dat[0]]
+    dat = [a for a in dat if a % dat[0] != 0]
 
 sosu.extend(dat)
 
 print(sosu, len(sosu))
 
-# fd = open("sosu", "wt")
-# fd.write(str(sosu))
-# fd.close()
+with open("sosu.txt", "w") as fd:
+    fd.write(' '.join(map(str, sosu)) + '\n')
 
-fd = open("sosu", "rt")
-strline = fd.readline()
-fd.close()
+with open("sosu.txt", "r") as fd:
+    strline = fd.readline()
 
 sosu = [int(a) for a in strline.split()]
 
 while True:
-    su = int(input("1000 이하의 자연수 입력 (0 to end): "))
+    su = int(input("1000 이하의 자연수 입력 (0 to end) "))
     if su == 0:
         break
     if su in sosu:
