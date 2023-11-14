@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let mode = "white";
+    function sub() {
+      if(mode != "white") {
+        document.getElementsByTagName("h2").style.color="white"
+        document.getElementsByTagName("p").style.color="white"
+        document.getElementsByTagName("body").style.color="black"
+      }
+    }
+  </script>
+  <h2>다크모드와 화이트 모드</h2>
+  <p>버튼을 누르면 바뀐다.</p>
+  <button onclick="sub()">라이트 다크모드 버튼</button>
+</body>
+</html>
