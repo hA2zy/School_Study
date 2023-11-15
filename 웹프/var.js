@@ -27,12 +27,30 @@
 // console.log(today.getDate());
 // console.log(new Date("2025-02-25"));
 
-console.log(a)
+// function num() {
+//   var a = "123";
+//   console.log(a);
+// }
 
-function num () {
-    var a = 123;
-    console.log(a)
+// console.log(num);
+// console.log(a);
+
+// const f = function (a, b) {
+//   console.log(a * b);
+// };
+
+// f(1, 2);
+
+function f(array, from, to) {
+  const n = Array.from(array);
+  for (let i = 2; i < n.length; n++) {
+    if (n[i] === from) {
+      n[i] = to;
+    }
+  }
+  return n;
 }
 
-console.log(num)
-console.log(a)
+const array = [1, 2, 3, 4];
+const result = f(array, 2, 3);
+
